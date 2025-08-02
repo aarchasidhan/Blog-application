@@ -9,17 +9,6 @@ const PORT = 3001;
 app.use(express.json());
 app.use(cors());
 
-// ✅ Connect to MongoDB
-mongoose.connect(
-  "mongodb+srv://aarchasidharthan:user@cluster0.5ubrcgf.mongodb.net/blog_application?retryWrites=true&w=majority&appName=Cluster0",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-)
-.then(() => console.log("Connected to MongoDB"))
-.catch((err) => console.error("MongoDB connection error:", err));
-
 // ✅ Mongoose Schema & Model
 const blogSchema = new mongoose.Schema({
   title: String,
